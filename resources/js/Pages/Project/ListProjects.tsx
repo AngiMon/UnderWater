@@ -7,13 +7,25 @@ import {ProjectLayout} from "../../Ui/Layout/ProjectLayout";
 export const ListProjects = ({projects}) => {
     const [hoveredProjectId, setHoveredProjectId] = React.useState(null);
 
+    function handleClick (slug) {
+        window.location.replace(`/projects/${slug}`)
+    }
+
     return (
         <ProjectLayout>
             <Head title="Projets" />
-            <Grid container sx={{marginTop: "16px"}} spacing={2}>
-                {projects.map(project => (
+            <Grid container spacing={2}>
+                {
+                    0 === projects.length
+                        ? <Grid item xs={12} sm={12} md={12} sx={{ display:"flex", justifyContent:"center"}}>
+                            <Typography variant="h3" sx={{padding:"15px 20px", border:"3px dashed #ff9e45"}}>
+                                Pour commencer, ajoutez un nouveau projet
+                            </Typography>
+                        </Grid>
+                        : projects.map(project => (
                     <Grid item key={project.id} xs={12} sm={6} md={4}>
                         <Card
+                            onClick={() => handleClick(project.slug)}
                             elevation={3}
                             onMouseEnter={() => setHoveredProjectId(project.id)}
                             onMouseLeave={() => setHoveredProjectId(null)}
@@ -29,7 +41,12 @@ export const ListProjects = ({projects}) => {
                             }}
                         >
                             <CardContent>
-                                <Typography variant="h6" sx={{ display: hoveredProjectId === project.id ? 'none' : 'block', transition:'display 1s' }}>
+                                <Typography variant="h6"
+                                            sx={{
+                                                letterSpacing: "0.3rem",
+                                                display: hoveredProjectId === project.id ? 'none' : 'block',
+                                                transition:'display 1s'
+                                }}>
                                     {project.title.toUpperCase()}
                                 </Typography>
                                 <Typography variant="body1" sx={{ display: hoveredProjectId === project.id ? 'block' : 'none' }}>

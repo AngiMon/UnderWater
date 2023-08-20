@@ -35,7 +35,12 @@ export default function Layout({ children }) {
                 pages={pages}
                 settings={settings}
             />
-            <Container sx={{minHeight: '100vh'}}>
+            <Container
+                sx={{
+                    paddingTop: "16px",
+                    minHeight: '100vh',
+                    backgroundColor: "#eff5ff"
+            }}>
                 {children}
             </Container>
         </ThemeProvider>

@@ -71,8 +71,8 @@ const baseTheme = {
             // A100
         },
         text: {
-            primary: Colors.ColorWater,
-            secondary: Colors.ColorBlack,
+            primary: Colors.ColorBlack,
+            secondary: Colors.ColorWater,
             disabled: Colors.ColorGrey400,
         },
         divider: Colors.ColorGrey200,

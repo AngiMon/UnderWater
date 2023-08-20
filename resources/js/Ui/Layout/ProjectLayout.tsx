@@ -22,12 +22,14 @@ export const ProjectLayout = ({ children }) => {
                 >
                     <SpeedDialAction
                         key={'List'}
+                        FabProps={{ style: { color: '#000' } }}
                         icon={<ListAltIcon />}
                         tooltipTitle="Liste"
                         onClick={() => window.location.replace('/projects')}
                     />
                     <SpeedDialAction
                         key={'Add'}
+                        FabProps={{ style: { color: '#000' } }}
                         icon={<NoteAddIcon />}
                         tooltipTitle="Créer"
                         onClick={() => window.location.replace('/projects/add')}

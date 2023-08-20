@@ -10,7 +10,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * @property string $content
  * @property string $project_id
  */
-class StoreTaskRequest extends FormRequest
+class UpdateTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,9 +28,10 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
+            'title' => 'string',
             'content' => 'max:3000',
-            'project_id' => 'required|integer'
+            'position' => 'integer',
+            'state_id' => 'integer',
         ];
     }
 }

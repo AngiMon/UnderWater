@@ -37,6 +37,7 @@ class ProjectController extends Controller
 
         $project = new Project();
         $project->title = $request->title;
+        $project->slug = $project->makeSlug($request->title);
         $project->description = $request->description;
         $project->owner_id = $userId;
         $project->save();
@@ -50,9 +51,13 @@ class ProjectController extends Controller
         //
     }
 
-    public function edit(Project $project)
+    public function edit(string $slug): Response
     {
-        //
+        $project = Project::query()->where(['slug' => $slug])->firstOrFail();
+        return Inertia::render('Project/EditProject', [
+            'project' => $project,
+            'tasks' => $project->tasks()->orderBy('position')->getResults(),
+        ]);
     }
 
     public function update(Request $request, Project $project)

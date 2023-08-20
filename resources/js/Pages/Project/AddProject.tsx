@@ -8,7 +8,6 @@ import AddIcon from "@mui/icons-material/Add";
 
 interface AddProjectProps {}
 
-
 const AddProject: React.FC<AddProjectProps> = () => {
     const [title, setTitle] = useState<string>('');
     const [description, setDescription] = useState<string>('');
@@ -21,7 +20,9 @@ const AddProject: React.FC<AddProjectProps> = () => {
             description,
         });
 
-        return window.location.replace('/projects')
+        setTimeout(() => {
+            return window.location.replace('/projects')
+        }, 2000);
     };
 
     return (

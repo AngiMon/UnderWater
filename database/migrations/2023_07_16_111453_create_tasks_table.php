@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Project::class, 'project_id');
             $table->timestamps();
