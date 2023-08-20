@@ -50,4 +50,9 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+    public function states(): HasMany
+    {
+        return $this->hasMany(State::class);
+    }
 }

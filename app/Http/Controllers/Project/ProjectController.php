@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Project\StoreProjectRequest;
 use App\Models\Project;
-use App\Models\User;
+use App\Models\State;
 use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,6 +43,27 @@ class ProjectController extends Controller
         $project->save();
         $project->users()->attach([$userId]);
 
+        $stateTodo = new State();
+        $stateTodo->label = "À faire";
+        $stateTodo->value = "todo";
+        $stateTodo->position = 1;
+        $stateTodo->project_id = $project->id;
+        $stateTodo->save();
+
+        $stateInProgress = new State();
+        $stateInProgress->label = "En cours";
+        $stateInProgress->value = "in_progress";
+        $stateInProgress->position = 2;
+        $stateInProgress->project_id = $project->id;
+        $stateInProgress->save();
+
+        $stateDone = new State();
+        $stateDone->label = "Terminé";
+        $stateDone->value = "done";
+        $stateDone->position = 3;
+        $stateDone->project_id = $project->id;
+        $stateDone->save();
+
         return tap($project)->save();
     }
 
@@ -57,6 +78,7 @@ class ProjectController extends Controller
         return Inertia::render('Project/EditProject', [
             'project' => $project,
             'tasks' => $project->tasks()->orderBy('position')->getResults(),
+            'states' => $project->states()->getResults(),
         ]);
     }
 

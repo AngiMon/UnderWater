@@ -13,6 +13,8 @@ class State extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function project(): HasOne
     {
         return $this->hasOne(Project::class);

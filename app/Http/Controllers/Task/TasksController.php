@@ -37,12 +37,11 @@ class TasksController extends AbstractTaskController
 
     public function manyUpdate(Request $request): RedirectResponse
     {
-        $i = 1;
         foreach ($request->tasks as $task) {
             Task::query()->where('id', '=', $task['id'])->update([
-                'position' => $i,
+                'position' => $task['position'],
+                'state_id' => $task['state_id'],
             ]);
-            $i++;
         }
 
         return redirect()->back();
