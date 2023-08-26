@@ -20,7 +20,7 @@ class TasksController extends AbstractTaskController
             'tasks' => $this->taskRepository->list(),
         ]);
     }
-    public function store(StoreTaskRequest $request): RedirectResponse
+    public function store(StoreTaskRequest $request)
     {
         $userId = Auth::user()->getAuthIdentifier();
 

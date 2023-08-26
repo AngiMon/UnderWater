@@ -30,13 +30,13 @@ export interface EditProjectProps {
 
 export const EditProject: FC<EditProjectProps> = ({project, tasks, states}) => {
     const [title, setTitle] = useState<string>('');
-    const [projectId, setProjectId] = useState<number>(project.id);
+    const [project_id, setProjectId] = useState<number>(project.id);
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         Inertia.post('/tasks', {
             title,
-            projectId,
+            project_id,
         });
     };
 
