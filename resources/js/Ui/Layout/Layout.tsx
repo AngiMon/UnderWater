@@ -2,9 +2,9 @@ import * as React from 'react';
 import ResponsiveAppBar, {AuthProps} from "../Components/Molecules/NavBar/NavBar";
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import {defaultTheme} from '../Style/theme';
-import {usePage} from "@inertiajs/react";
 import Container from "@mui/material/Container";
 
+// @ts-ignore
 export default function Layout({ children }) {
     const pages = [
         {

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { createInertiaApp } from '@inertiajs/react'
+// @ts-ignore
 import { createRoot } from 'react-dom/client'
 
 import './Ui/Style/base.css';

@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FloodIcon from '@mui/icons-material/Flood';
 import {FC} from "react";
 import {Link, usePage} from "@inertiajs/react";
-import {Colors} from "../../../Style/token";
+import {Colors} from "@/Ui/Style/token";
 
 export interface LinkProps {
     title: string,

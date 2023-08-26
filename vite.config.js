@@ -11,4 +11,5 @@ export default defineConfig({
     optimizeDeps: {
         include: ['inertia', 'inertia-react'],
     },
+    jsx: 'react'
 });

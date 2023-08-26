@@ -2,12 +2,17 @@ import * as React from 'react';
 import {Head} from "@inertiajs/react";
 import {Card, CardContent, Grid} from '@mui/material';
 import Typography from "@mui/material/Typography";
-import {ProjectLayout} from "../../Ui/Layout/ProjectLayout";
+import ProjectLayout from "@/Ui/Layout/ProjectLayout";
+import {projectProps} from "./EditProject";
+import {FC} from "react";
 
-export const ListProjects = ({projects}) => {
-    const [hoveredProjectId, setHoveredProjectId] = React.useState(null);
+type ListProjectsProps = {
+    projects: Array<projectProps>
+}
+export const ListProjects: FC<ListProjectsProps> = ({projects}) => {
+    const [hoveredProjectId, setHoveredProjectId] = React.useState<number|null>();
 
-    function handleClick (slug) {
+    function handleClick (slug: string) {
         window.location.replace(`/projects/${slug}`)
     }
 

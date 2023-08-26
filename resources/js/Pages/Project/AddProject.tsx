@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {useState} from "react";
 import { Inertia } from '@inertiajs/inertia';
-import {TextField, Button, Container, Card, Box, Paper, Grid} from '@mui/material';
-import {ProjectLayout} from "../../Ui/Layout/ProjectLayout";
+import {TextField, Button, Paper, Grid} from '@mui/material';
+import ProjectLayout from "../../Ui/Layout/ProjectLayout";
 import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
 

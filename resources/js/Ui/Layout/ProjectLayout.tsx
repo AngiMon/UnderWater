@@ -4,7 +4,8 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import * as React from "react";
 
-export const ProjectLayout = ({ children }) => {
+// @ts-ignore
+const ProjectLayout = ({ children }) => {
     return (
         <Layout>
             <Box sx={{
@@ -39,3 +40,5 @@ export const ProjectLayout = ({ children }) => {
         </Layout>
     )
 }
+
+export default ProjectLayout;
