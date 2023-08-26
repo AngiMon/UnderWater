@@ -22,11 +22,6 @@
     }
   },
   "include": [
-    "./resources/js/**/*",
-    "./resources/js/Ui/**/*",
-    "./resources/js/Ui/Layout/*",
-    "./resources/js/Ui/Components/**/*",
-    "./resources/js/Ui/Components/Molecules/**/*",
-    "./resources/js/Ui/Components/Molecules/Board/*",
+    "./resources/js/**/*"
   ]
 }
