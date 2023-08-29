@@ -4,23 +4,7 @@ import {Inertia} from "@inertiajs/inertia";
 import {FC, useState} from "react";
 import ProjectLayout from "@/Ui/Layout/ProjectLayout";
 import Board from "@/Ui/Components/Molecules/Board/Board";
-
-export interface projectProps {
-    id: number,
-    slug: string,
-    title: string,
-    description: string,
-}
-export interface taskProps {
-    id: number,
-    title: string,
-    state_id: number,
-}
-export interface stateProps {
-    id: number,
-    label: string,
-    value: string,
-}
+import {projectProps, stateProps, taskProps} from "@/Contracts/interfaces";
 
 export interface EditProjectProps {
     project: projectProps,

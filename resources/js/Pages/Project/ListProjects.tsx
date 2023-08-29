@@ -3,8 +3,8 @@ import {Head} from "@inertiajs/react";
 import {Card, CardContent, Grid} from '@mui/material';
 import Typography from "@mui/material/Typography";
 import ProjectLayout from "@/Ui/Layout/ProjectLayout";
-import {projectProps} from "./EditProject";
 import {FC} from "react";
+import {projectProps} from "@/Contracts/interfaces";
 
 type ListProjectsProps = {
     projects: Array<projectProps>
