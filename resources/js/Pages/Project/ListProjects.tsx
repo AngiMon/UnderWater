@@ -7,7 +7,7 @@ import {FC} from "react";
 import {projectProps} from "@/Contracts/interfaces";
 
 type ListProjectsProps = {
-    projects: Array<projectProps>
+    projects: Array<projectProps>,
 }
 export const ListProjects: FC<ListProjectsProps> = ({projects}) => {
     const [hoveredProjectId, setHoveredProjectId] = React.useState<number|null>();
